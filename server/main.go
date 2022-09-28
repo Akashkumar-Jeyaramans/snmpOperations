@@ -4,7 +4,7 @@ import (
 	"log"
 	"net"
 
-	pb "github.com/Akashkumar-Jeyaramans/snmpOperations/v1"
+	pb "github.com/Akashkumar-Jeyaramans/snmpOperations/protos"
 	"google.golang.org/grpc"
 )
 
