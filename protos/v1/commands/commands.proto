@@ -11,7 +11,8 @@ service Command{
 
 rpc Get(GetRequest) returns (GetResponse){
     option (google.api.http)={
-        post : "/v1/operations/get/{oid}"
+        post : "/echo"
+        body : "*"
     };
 };
 
@@ -21,26 +22,19 @@ rpc Get(GetRequest) returns (GetResponse){
 
 
 
-message Oid {
-    string oid =1;
-}
-
-message IP_Address{
-    string ipAddress =1;
-}
 
 message GetRequest{
-    repeated string ipAddress=1;
-    repeated string oid =2;
+    string ipAddress = 1;
+    string oid = 2;
 }
-
+message GetResponse{
+     string message = 1;
+}
 
 /*
  * Asn1Ber Enum Type definitions
  */
 
 
-message GetResponse {
- string Name = 1; // OID
-}
+
 
