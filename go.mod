@@ -3,6 +3,7 @@ module github.com/Akashkumar-Jeyaramans/snmpOperations
 go 1.18
 
 require (
+	github.com/deejross/go-snmplib v0.0.0-20190126151901-0ff3fc321a43
 	github.com/grpc-ecosystem/grpc-gateway/v2 v2.11.3
 	google.golang.org/genproto v0.0.0-20220927151529-dcaddaf36704
 	google.golang.org/grpc v1.49.0

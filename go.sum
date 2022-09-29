@@ -1,3 +1,5 @@
+github.com/deejross/go-snmplib v0.0.0-20190126151901-0ff3fc321a43 h1:ASR8oKPF2V7iEpMlnFU2S+n15d7oSfAiyk4ov2OLSiQ=
+github.com/deejross/go-snmplib v0.0.0-20190126151901-0ff3fc321a43/go.mod h1:m3S4JCGUB4uB26BFgN3q4OH9SCO0NqrvsvmNqwJD+Ew=
 github.com/golang/glog v1.0.0 h1:nfP3RFugxnNRyKgeWd4oI1nYvXpxrx8ck8ZrcizshdQ=
 github.com/golang/protobuf v1.5.0/go.mod h1:FsONVRAS9T7sI+LIUmWTfcYkHO4aIWwzhcaSAoJOfIk=
 github.com/golang/protobuf v1.5.2 h1:ROPKBNFfQgOUMifHyP+KYbvpjbdoFNs+aK7DXlji0Tw=

@@ -14,6 +14,12 @@ type getServer struct {
 	pb.UnimplementedCommandServer
 }
 
+func (s getServer) Get(ctx context.Context, in *pb.GetRequest) (*pb.GetResponse, error) {
+	return &pb.GetResponse{
+		Message: in.IpAddress,
+	}, nil
+}
+
 func main() {
 	mux := runtime.NewServeMux()
 

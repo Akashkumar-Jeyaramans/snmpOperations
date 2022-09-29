@@ -20,6 +20,7 @@ rpc Get(GetRequest) returns (GetResponse){
 
 message GetRequest{
     string ipAddress = 1;
+    string oid = 2;
 }
 
 message GetResponse{
