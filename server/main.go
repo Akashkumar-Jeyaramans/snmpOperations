@@ -2,7 +2,6 @@ package main
 
 import (
 	"context"
-	"fmt"
 	"log"
 	"net"
 	"net/http"
@@ -19,10 +18,8 @@ type snmpgrpcServer struct {
 	pb.UnimplementedCommandServer
 }
 
-func (s *snmpgrpcServer) Get(ctx context.Context, in *pb.GetRequest) (*pb.GetResponse, error) {
-	return &pb.GetResponse{
-		Message: fmt.Sprintf("name: %s", in.IpAddress),
-	}, nil
+func (s *snmpgrpcServer) Get(ctx context.Context, req *pb.GetRequest) (*pb.GetResponse, error) {
+	return req, nil
 }
 
 func main() {
