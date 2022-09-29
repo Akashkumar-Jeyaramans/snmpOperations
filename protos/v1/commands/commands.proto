@@ -9,7 +9,7 @@ import "google/api/annotations.proto";
 
 service Command{
 
-rpc Get(GetRequest) returns (GetRequest){
+rpc Get(GetRequest) returns (GetResponse){
     option (google.api.http)={
         post : "/echo"
         body : "*"
@@ -18,20 +18,14 @@ rpc Get(GetRequest) returns (GetRequest){
 
 }
 
-
-
-
-
-
 message GetRequest{
     string ipAddress = 1;
-    string oid = 2;
 }
 
+message GetResponse{
+    string message =1;
+}
 
-/*
- * Asn1Ber Enum Type definitions
- */
 
 
 

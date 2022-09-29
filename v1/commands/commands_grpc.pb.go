@@ -22,7 +22,7 @@ const _ = grpc.SupportPackageIsVersion7
 //
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type CommandClient interface {
-	Get(ctx context.Context, in *GetRequest, opts ...grpc.CallOption) (*GetRequest, error)
+	Get(ctx context.Context, in *GetRequest, opts ...grpc.CallOption) (*GetResponse, error)
 }
 
 type commandClient struct {
@@ -33,8 +33,8 @@ func NewCommandClient(cc grpc.ClientConnInterface) CommandClient {
 	return &commandClient{cc}
 }
 
-func (c *commandClient) Get(ctx context.Context, in *GetRequest, opts ...grpc.CallOption) (*GetRequest, error) {
-	out := new(GetRequest)
+func (c *commandClient) Get(ctx context.Context, in *GetRequest, opts ...grpc.CallOption) (*GetResponse, error) {
+	out := new(GetResponse)
 	err := c.cc.Invoke(ctx, "/commands.Command/Get", in, out, opts...)
 	if err != nil {
 		return nil, err
@@ -46,7 +46,7 @@ func (c *commandClient) Get(ctx context.Context, in *GetRequest, opts ...grpc.Ca
 // All implementations must embed UnimplementedCommandServer
 // for forward compatibility
 type CommandServer interface {
-	Get(context.Context, *GetRequest) (*GetRequest, error)
+	Get(context.Context, *GetRequest) (*GetResponse, error)
 	mustEmbedUnimplementedCommandServer()
 }
 
@@ -54,7 +54,7 @@ type CommandServer interface {
 type UnimplementedCommandServer struct {
 }
 
-func (UnimplementedCommandServer) Get(context.Context, *GetRequest) (*GetRequest, error) {
+func (UnimplementedCommandServer) Get(context.Context, *GetRequest) (*GetResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Get not implemented")
 }
 func (UnimplementedCommandServer) mustEmbedUnimplementedCommandServer() {}
